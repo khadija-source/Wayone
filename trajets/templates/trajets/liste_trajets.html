@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Wayone - Trajets disponibles</title>
+</head>
+<body>
+    <h1>Trajets disponibles</h1>
+
+    {% if trajets %}
+        <ul>
+            {% for trajet in trajets %}
+                <li>
+                    {{ trajet.point_depart }} → {{ trajet.point_arrivee }}
+                    le {{ trajet.date_depart }}
+                    — {{ trajet.places_disponibles }} places
+                    — {{ trajet.prix }} FCFA
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun trajet disponible pour le moment.</p>
+    {% endif %}
+</body>
+</html>
